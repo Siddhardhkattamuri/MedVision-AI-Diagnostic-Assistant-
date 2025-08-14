@@ -1,0 +1,123 @@
+/* Floating Action Button */
+.floating-chat-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-image: linear-gradient(45deg, #00d4ff, #0095ff);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 157, 255, 0.5);
+  z-index: 999;
+}
+
+.floating-chat-button.notify {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 157, 255, 0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 35px rgba(0, 157, 255, 0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 157, 255, 0.5); }
+}
+
+/* THE CHAT WINDOW */
+.chat-window {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 2rem;
+  width: 420px;
+  height: 540px;
+  background-color: #12122b;
+  border: 1px solid #2a2f6c;
+  border-radius: 20px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  padding: 1rem 1.5rem;
+  color: #e0e5ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.chat-header h3 { font-weight: 500; font-size: 1.2rem; }
+.chat-header button { background: none; border: none; color: #626c9f; font-size: 1.8rem; cursor: pointer; }
+
+/* THE SCROLLABLE CONVERSATION AREA */
+.chat-body {
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.chat-body::-webkit-scrollbar { width: 8px; }
+.chat-body::-webkit-scrollbar-track { background: transparent; }
+.chat-body::-webkit-scrollbar-thumb { background: #353b6a; border-radius: 4px; }
+
+/* CHAT MESSAGE BUBBLES */
+.chat-message { padding: 0.8rem 1.2rem; border-radius: 14px; max-width: 85%; line-height: 1.6; font-size: 0.95rem; }
+.chat-message.bot { background-color: transparent; border: 1px solid #2a3a68; color: #b0c0ff; align-self: flex-start; }
+.chat-message.bot a { color: #46d3fd; text-decoration: none; font-weight: 500; }
+.chat-message.user { background-color: #4A4592; color: #e0e5ff; align-self: flex-end; }
+
+/* THE FOOTER */
+.chat-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #2a2f6c;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+/* 
+  --- THIS IS THE CORRECTED CSS SELECTOR ---
+  It now correctly targets the .quick-replies class from your JS
+*/
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden; /* Helps with animations */
+}
+.quick-replies button {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid #4a4592;
+  background: transparent;
+  color: #a49edb;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.quick-replies button:hover {
+  background-color: #4a4592;
+  color: white;
+}
+
+/* THE LOCATION INPUT FORM */
+.location-form { display: flex; }
+.location-form input {
+  flex-grow: 1; border: 1px solid #343c8a; padding: 0.75rem 1rem;
+  border-radius: 10px 0 0 10px; background: #0d122b;
+  color: #cdd5f0;
+}
+.location-form input:focus { outline: none; border-color: #0095ff; }
+
+.location-form button {
+  border: none; background-image: linear-gradient(45deg, #00d4ff, #0095ff);
+  color: white; padding: 0 1.25rem; border-radius: 0 10px 10px 0;
+  font-weight: 600; cursor: pointer;
+}

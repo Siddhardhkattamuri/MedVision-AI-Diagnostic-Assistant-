@@ -1,0 +1,82 @@
+/* Styling for the standalone results card */
+.result-card {
+  width: 550px;
+  margin-top: 2rem;
+  background-color: #191c3c;
+  border: 1px solid #2a2f6c;
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: #cdd5f0;
+  text-align: center;
+}
+
+.result-card.error h2 {
+  color: #ff6b6b;
+  margin-bottom: 1.5rem;
+}
+
+/* "Analysis Complete" title style */
+.result-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+  opacity: 0.6;
+  margin-bottom: 2rem;
+}
+
+/* Div to center the pill button */
+.prediction-highlight {
+  margin-bottom: 2rem;
+}
+
+/* THE PILL-SHAPED, GLOWING BUTTON STYLE */
+.prediction-class {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Dynamic styling for each diagnosis */
+.prediction-class.pneumonia {
+  background-color: #e44d2e;
+  box-shadow: 0 0 25px rgba(228, 77, 46, 0.7);
+}
+.prediction-class.tuberculosis {
+  background-color: #f1c40f;
+  box-shadow: 0 0 25px rgba(241, 196, 15, 0.7);
+}
+.prediction-class.normal {
+  background-color: #2ecc71;
+  box-shadow: 0 0 25px rgba(46, 204, 113, 0.7);
+}
+
+/* "Confidence Level" text style */
+.confidence-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-bottom: 2.5rem; /* Add more space before the button */
+}
+.confidence-text strong { font-weight: 600; }
+
+/* "CLASSIFY ANOTHER IMAGE" BUTTON STYLE */
+.reset-button {
+  background: transparent;
+  border: 1px solid #4a518c;
+  color: #a49edb;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+.reset-button:hover {
+  background-color: #4a518c;
+  color: white;
+  border-color: #4a518c;
+}

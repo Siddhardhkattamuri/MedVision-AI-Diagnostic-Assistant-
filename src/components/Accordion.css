@@ -1,0 +1,44 @@
+/* Each item is a block, but the line is added via the sibling selector below */
+.accordion-item {
+    /* No border here directly */
+}
+
+/* This adds a separator line to every item EXCEPT the first one. */
+.accordion-item + .accordion-item {
+    border-top: 1px solid #2a2f6c;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0.5rem; /* Increased padding for better spacing */
+    cursor: pointer;
+    font-weight: 600; /* Bolder font for the title */
+    font-size: 1.05rem;
+    color: #e0e5ff;
+}
+.accordion-header:hover {
+    color: white;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+    margin-left: 1rem;
+}
+
+.accordion-content {
+    overflow: hidden;
+}
+
+/* 
+  The <p> tag is now a direct child of the section, so we target it directly.
+  This ensures the text content has proper padding and styling.
+*/
+.accordion-content p {
+    padding: 0 0.5rem 1.5rem 0.5rem; /* Add padding all around, especially bottom */
+    font-size: 1rem;
+    line-height: 1.7; /* Increased line height for readability */
+    color: #cdd5f0b3;
+}
